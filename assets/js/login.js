@@ -42,10 +42,15 @@ function setLocalStorageItems(json) {
 
 function idLetter(str) {
     let name = str;
-    let words = name.split(" ");
-    let firstWord = words[0];
-    let firstLetter = firstWord.substring(0, 1).toUpperCase();
-    return firstLetter;
+    if (name.contains('')) {
+        let words = name.split(" ");
+        let firstWord = words[0];
+        let firstLetter = firstWord.substring(0, 1).toUpperCase();
+        return firstLetter;
+    } else {
+        let firstLetter = name.substring(0, 1).toUpperCase();
+        return firstLetter;
+    }
 }
 
 function inputValidation() {

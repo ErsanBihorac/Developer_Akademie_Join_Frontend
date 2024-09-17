@@ -89,7 +89,7 @@ function getArray(key) {
  * this function gets initialized when the page is loaded
  */
 async function init() {
-    loadAccounts();
+    // loadAccounts();
 }
 
 /**

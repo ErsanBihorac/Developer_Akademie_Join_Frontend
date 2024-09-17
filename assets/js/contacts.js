@@ -200,10 +200,10 @@ function clearLoginInputs() {
  */
 async function load() {
     await loadContacts();
-    loadAccounts();
+    // loadAccounts();
     collectLetters();
     displayContacts();
-    checkGuestGiveAlert();
+    // checkGuestGiveAlert();
 }
 
 /**

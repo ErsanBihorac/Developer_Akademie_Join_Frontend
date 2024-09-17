@@ -1,7 +1,7 @@
 const STORAGE_TOKEN = '4AVD74O6ONTUSWYBIKRAF3SC5B2U9YW3OCE1JRVE';
 const STORAGE_URL = 'https://remote-storage.developerakademie.org/item';
 
-let allTasks = loadTasks();
+// let allTasks = loadTasks();
 let SubtaskArray = {
     'subtaskContent': [],
     'subtaskDone': []
@@ -36,7 +36,7 @@ async function addTask() {
         console.error('Error creating todo:', response.statusText);
 
     clearInputs();
-    loadTasks();
+    // loadTasks();
 }
 
 function determineState() {
@@ -504,8 +504,8 @@ async function formValidation() {
         (urgentButton.classList.contains('urgent') || mediumButton.classList.contains('medium') || lowButton.classList.contains('low'))
     ) {
         await addTask();
-        // showMessage();
-        // openBoard();
+        showMessage();
+        openBoard();
     }
 }
 /**

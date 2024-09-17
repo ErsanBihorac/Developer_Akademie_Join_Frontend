@@ -32,6 +32,10 @@ function EditValue(i) {
     let dueDate = document.getElementById(`edit-dueDate${i}`);
     let priority = getEditedPriority(i);
 
+    if(dueDate.value == ''){
+        dueDate.value = todos[i].dueDate
+    }
+
     return task = {
         'title': title.value,
         'description': description.value,
@@ -139,7 +143,7 @@ async function editTask(id) {
 
     loadAssignableNamesEdit(id);
     determineClickedButton(id);
-    renderSubtaskContainerEdit(id);
+    // renderSubtaskContainerEdit(id);
     displayInitialsEdit(id);
 };
 
@@ -490,7 +494,7 @@ function manipulateAssignedArrayEdit(i, li, id) { //
     if (li.classList.contains('assignedNameLI-toggled')) {
         todos[id].assignedName.push(name);
     } else { todos[id].assignedName.splice(index, 1) }
-    manipulateAssignedInitialsEdit(i, id, li);
+    // manipulateAssignedInitialsEdit(i, id, li);
 }
 
 /**

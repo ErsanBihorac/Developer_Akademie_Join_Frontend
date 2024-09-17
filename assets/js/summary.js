@@ -6,7 +6,7 @@ async function summaryInit() {
   GreetingName.push(names);
 
   includeHTML();
-  await loadTasks();
+  // await loadTasks();
   updatesummary();
   greeting();
   
