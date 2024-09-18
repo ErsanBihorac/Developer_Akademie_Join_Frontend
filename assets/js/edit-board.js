@@ -32,7 +32,7 @@ function EditValue(i) {
     let dueDate = document.getElementById(`edit-dueDate${i}`);
     let priority = getEditedPriority(i);
 
-    if(dueDate.value == ''){
+    if (dueDate.value == '') {
         dueDate.value = todos[i].dueDate
     }
 
@@ -141,11 +141,19 @@ async function editTask(id) {
     </div>
     `;
 
+    addDateToTheEditOverlay(id);
     loadAssignableNamesEdit(id);
     determineClickedButton(id);
     // renderSubtaskContainerEdit(id);
     displayInitialsEdit(id);
 };
+
+function addDateToTheEditOverlay(i) {
+    let dateStr = formatDateToDDMMYYYY(todos[i].dueDate);
+    let [day, month, year] = dateStr.split('/');
+    let formattedDate = `${year}-${month}-${day}`;
+    document.getElementById(`edit-dueDate${i}`).value = formattedDate;
+}
 
 /**
  * This function activates the input field to add subtasks.
